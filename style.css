@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'main-content sidebar'
+        'footer footer';
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.header {
+    grid-area: header;
+    background-image: url('https://th.bing.com/th/id/R.cacc6eac33137156d0cc41bd03a24430?rik=4v0WGt6LFDT%2fAA&riu=http%3a%2f%2frunthetrap.com%2fwp-content%2fuploads%2f2017%2f07%2flinkinparknew.jpg&ehk=m8PFAXLJoCgC8Y5vL5Z7moFkpULIxvFgXi32sjP%2bFmc%3d&risl=&pid=ImgRaw&r=0'); 
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.header h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.main-content {
+    grid-area: main-content;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.footer div {
+    flex: 1;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            'header'
+            'main-content'
+            'sidebar'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+}
